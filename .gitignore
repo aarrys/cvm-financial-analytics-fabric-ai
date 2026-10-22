@@ -20,17 +20,17 @@ desktop.ini
 *.swp
 *.swo
 *~
-.project
-.classpath
-.settings/
 
 # Logs
 *.log
 logs/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+
+# Temporary files (the downloader writes *.tmp before the atomic rename)
+*.tmp
+*.temp
+*.bak
+*.orig
+.cache/
 
 # =============================================================================
 # ENVIRONMENT & SECRETS
@@ -47,19 +47,11 @@ secrets/
 config/local.*
 
 # =============================================================================
-# DEPENDENCIES
+# PYTHON
 # =============================================================================
 
-# Node
-node_modules/
-.npm
-.yarn/cache
-.pnp.*
-
-# Python
 __pycache__/
 *.py[cod]
-*.pyo
 .venv/
 venv/
 env/
@@ -71,52 +63,35 @@ build/
 .mypy_cache/
 .ruff_cache/
 
-# Ruby
-.bundle/
-vendor/bundle/
-
-# Power BI
-**/.pbi/localSettings.json
-**/.pbi/cache.abf
-
-
-# =============================================================================
-# BUILD OUTPUT
-# =============================================================================
-
-dist/
-build/
-out/
-.next/
-.nuxt/
-.svelte-kit/
-.turbo/
-*.min.js
-*.min.css
+# Local, machine-specific lock (not versioned; pyproject.toml is the source of truth)
+requirements-lock.txt
 
 # =============================================================================
 # TESTING & COVERAGE
 # =============================================================================
 
-coverage/
 .coverage
-*.lcov
-.nyc_output/
-test-results/
-playwright-report/
+.coverage.*
+htmlcov/
+coverage.xml
 
 # =============================================================================
-# MISC
+# DATA (medallion layers)
 # =============================================================================
 
-*.tmp
-*.temp
-*.bak
-*.orig
-.cache/
-.parcel-cache/
-*.csv
+# Raw and standardized data are large and reproducible from the CVM source.
+# Gold is not ignored: it may be versioned if small.
+# CSVs elsewhere (tests/data/, powerbi/tests/) must stay versioned.
 data/bronze/*
 data/silver/*
 !data/**/.gitkeep
+
+# Local vector index (RAG, Stage D)
 rag_store/
+
+# =============================================================================
+# POWER BI
+# =============================================================================
+
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
