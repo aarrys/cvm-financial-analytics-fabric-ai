@@ -1,0 +1,122 @@
+# =============================================================================
+# GENERAL
+# =============================================================================
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor & IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =============================================================================
+# ENVIRONMENT & SECRETS
+# =============================================================================
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.p12
+secrets/
+config/local.*
+
+# =============================================================================
+# DEPENDENCIES
+# =============================================================================
+
+# Node
+node_modules/
+.npm
+.yarn/cache
+.pnp.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Ruby
+.bundle/
+vendor/bundle/
+
+# Power BI
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+
+# =============================================================================
+# BUILD OUTPUT
+# =============================================================================
+
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+*.min.js
+*.min.css
+
+# =============================================================================
+# TESTING & COVERAGE
+# =============================================================================
+
+coverage/
+.coverage
+*.lcov
+.nyc_output/
+test-results/
+playwright-report/
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+*.tmp
+*.temp
+*.bak
+*.orig
+.cache/
+.parcel-cache/
+*.csv
+data/bronze/*
+data/silver/*
+!data/**/.gitkeep
+rag_store/
